@@ -13,7 +13,7 @@ node {
    }
    stage('docker build/push') {
      docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
-       def app = docker.build("<docker hub username>/jenkinstutorial:${commit_id}", '.').push()
+       def app = docker.build("mhondadocker/jenkinstutorial:${commit_id}", '.').push()
      }
    }
 }
